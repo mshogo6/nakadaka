@@ -1,0 +1,54 @@
+body {
+	background-image: url('../img/bg.png');
+	background-size: cover;
+	height: 100vh;
+	background-position: center;
+	font-family: 'Yuji Syuku', serif;
+}
+
+div#logo {
+	margin: 10% 30% 0 30%;
+	background-color: rgba(255,255,255,0.6);
+	border-radius: 20px;
+	padding: 10px;
+}
+
+img {
+	width: 100%;
+}
+
+button {
+	background-color: white;
+	display: block;
+	margin: 60px auto 0 auto;
+	padding: 20px;
+	font-size: 45px;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+button:hover {
+	background-color: rgb(230, 230, 230);
+}
+
+textarea {
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 22px;
+	overflow-x:scroll;
+	overflow-y: hidden;
+	resize: none;
+	width: 40%;
+	background-color: white;
+	margin-top: 10px;
+}
+
+.visual h2 {
+	margin: 40px 30% 0 27%;
+	padding: 10px;
+	border-radius: 10px 0 0 10px;
+	background-color: rgb(240, 240, 240);
+	font-size: 40px;
+}

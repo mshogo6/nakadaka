@@ -1,0 +1,56 @@
+<!doctype html>
+<head lang="ja">
+	<meta charset="UTF-8">
+	<title>NAKADAKA - Upload</title>
+	<link rel="icon" href="../static/img/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
+	<link rel="stylesheet" href="../static/css/upload.css">
+	<link rel="stylesheet" href="../static/css/loading.css">
+	<script src="https://kit.fontawesome.com/9af6814cd8.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- 処理中画面 -->
+	<div id="wait">
+		<div class="wak">
+			<div class="icon">
+				<img src="../static/img/loading.gif" width="100">
+			</div>
+		</div>
+	</div>
+	<style>
+		#wait {
+			display: none;
+		}
+	</style>
+	<!-- 処理中画面ここまで -->
+
+	<div id="logo">
+		<img src="../static/img/logo.png">
+	</div>
+
+	<p>変更がなければそのまま送信してください。</p>
+
+	<form id="form" action="/inference" method="post">
+		<input id="form_submit" type="submit" value="Submit" onclick=turnOnWait()>
+	</form>
+
+	<button id="btn_submit" onclick=form_submit.click()>送信</button>
+
+	<script>
+		const form_submit = document.getElementById("form_submit");
+        var text = {{text|tojson}};
+		var input_elem = document.createElement("textarea");
+		input_elem.value = text;
+		input_elem.name = "text";
+		input_elem.id = "input_elem";
+		var parent = document.getElementById("form");
+		parent.prepend(input_elem);
+
+		function turnOnWait() {
+			document.getElementById('wait').style.display = 'block';
+		}
+    </script>
+</body>

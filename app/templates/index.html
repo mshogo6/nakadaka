@@ -1,0 +1,69 @@
+<!doctype html>
+<head lang="ja">
+	<meta charset="UTF-8">
+	<title>NAKADAKA</title>
+	<link rel="icon" href="../static/img/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
+	<link rel="stylesheet" href="../static/css/index.css">
+	<link rel="stylesheet" href="../static/css/loading.css">
+	<script src="https://kit.fontawesome.com/9af6814cd8.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<!-- 処理中画面 -->
+	<div id="wait">
+		<div class="wak">
+			<div class="icon">
+				<img src="../static/img/loading.gif" width="100">
+			</div>
+		</div>
+	</div>
+	<style>
+		#wait {
+			display: none;
+		}
+	</style>
+	<!-- 処理中画面ここまで -->
+
+	<div id="logo">
+		<img src="../static/img/logo.png">
+	</div>
+	
+	<button id="btn_file_input" onclick=form_file_input.click()><i class="fa-solid fa-file"></i> ファイルを読込む</button>
+	<p id="file_name"></p>
+	<button id="btn_submit" onclick=form_submit.click()>アップロード</button>
+
+	<form action="/upload" method="post" enctype="multipart/form-data">
+		<input id="form_file_input" type="file" name="file" accept="audio/*" onchange=validateForm()>
+		<input id="form_submit" type="submit" value="Upload" onclick=turnOnWait()>
+	</form>
+
+	<script>
+		const btn_file_input = document.getElementById('btn_file_input');
+		const form_file_input = document.getElementById('form_file_input');
+		const file_name = document.getElementById('file_name');
+
+		
+
+		function validateForm() {
+			const form_file_input = document.getElementById('form_file_input');
+			const btn_submit = document.getElementById('btn_submit');
+			const file_name = document.getElementById("file_name");
+
+			if (form_file_input.files.length === 0) {
+				btn_submit.display = none;
+			} else {
+				file_name.innerHTML = form_file_input.files[0].name;
+				file_name.style.display = 'inline-block';
+				btn_submit.style.display = 'block';
+			}
+		}
+
+		function turnOnWait() {
+			document.getElementById('wait').style.display = 'block';
+		}
+	</script>
+</body>
