@@ -1,12 +1,3 @@
-version: '3'
-services:
-  python3:
-    build: .
-    container_name: nakadaka_flask_app
-    hostname: nakadaka_flask_app
-    tty: true
-    volumes:
-      - ./app:/app
-      - ./conf/000-default.conf:/etc/apache2/sites-available/000-default.conf
-    ports:
-      - 80:80
+version https://git-lfs.github.com/spec/v1
+oid sha256:fe3522a7966e906f7ceec23f84d0b8779ab8c45f8311c45e09ad1cd18729769c
+size 278

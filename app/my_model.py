@@ -1,7 +1,3 @@
-from huggingsound import SpeechRecognitionModel
-
-def model():
-	model = SpeechRecognitionModel("mshogo6/nakadaka", device='cpu')
-	audio_paths = ['./audio.wav']
-	transcriptions = model.transcribe(audio_paths, batch_size=1)
-	return transcriptions[0]['transcription']
+version https://git-lfs.github.com/spec/v1
+oid sha256:691b3171b8334886956250147ee45ce6cf69f168fafc69ef80807583ba97dd03
+size 330

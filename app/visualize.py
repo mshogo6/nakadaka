@@ -1,21 +1,3 @@
-def visualize(input):
-	list = []
-	kana = []
-	num = 0
-	for char in input:
-		if(char == '['):
-			num += 1
-		elif(char == ']'):
-			num -= 1
-		else:
-			kana.append(char)
-			list.append(num)
-	output = ''''''
-	for i in reversed(range(min(list), max(list) + 1)):
-		for n, c in zip(list, kana):
-			if(n == i):
-				output += c
-			else:
-				output += '　'
-		output += '\n'
-	return (output, max(list) -  min(list) + 1)
+version https://git-lfs.github.com/spec/v1
+oid sha256:6fd2f95d4ac4ffa41fa29adfdd328b802b3ce7bb82d56f701138977fb4a94501
+size 428
