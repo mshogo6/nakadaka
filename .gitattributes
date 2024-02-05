@@ -1,3 +1,4 @@
+app/tdmelodic-ipadic/sys.dic filter=lfs diff=lfs merge=lfs -text
 /Dockerfile filter=lfs diff=lfs merge=lfs -text
 *.py filter=lfs diff=lfs merge=lfs -text
 *.wsgi filter=lfs diff=lfs merge=lfs -text
